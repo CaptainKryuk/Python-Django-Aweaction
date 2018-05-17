@@ -1,0 +1,16 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+Дополнительная информация
+{% endblock %}
+
+{% block content %}
+<h2>Обновите дополнительную информацию о Вас: </h2>
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <p>Направление: <input type="text" name="direction"></p>
+        <p>Дата рождения: <input type="date" name="date_of_birth"></p>
+        <p>Фото: <input type="file" name="photo"></p>
+    <button type="submit">Обновить</button>
+    </form>
+<p><a href="{% url 'dashboard' %}">Вернуться к профилю</a></p>
+{% endblock %}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock %}</title>
+    <link href="{% static 'css/wrapper.css' %}" rel="stylesheet">
+</head>
+<body>
+<a href="/"><img src="{% static 'img/Logo.jpg' %}" alt="My logo" /></a>
+
+<div>
+    {% block content %}
+    {% endblock %}
+</div>
+    <div class="container">
+      &copy; Все права защищены 2018
+    </div>
+</body>
+</html>

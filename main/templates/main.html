@@ -1,0 +1,14 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+Главная
+{% endblock %}
+
+{% block content %}
+<h1>Главная страница</h1>
+<p>
+    <a href="{% url 'registration' %}"><input type="button" value="Зарегистрироваться" /></a>
+    <a href="{% url 'login' %}"><input type="button" value="Войти" /></a>
+    <a href="/news/"><input type="button" value="Новости" /></a>
+</p>
+{% endblock %}

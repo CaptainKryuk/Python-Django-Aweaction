@@ -1,0 +1,14 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+{{ detail.title }}
+{% endblock %}
+
+{% block content %}
+<h4><p>Published by {{ detail.author }} at {{ detail.publish }}</p></h4>
+
+<h3><p>{{ detail.title }}</p></h3>
+<p>{{ detail.text }}</p>
+
+<a href="/news/"><p><input type="button" value="Все новости"></p></a>
+{% endblock %}

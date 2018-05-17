@@ -1,0 +1,20 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+News
+{% endblock %}
+
+{% block content %}
+    {% if all_news %}
+        {% for news in all_news %}
+            {% if news.status == 'published' %}
+                <p><a href="/news/article/{{ news.id }}/">{{ news.title }}</a></p>
+                <p>{{ news.contest }}</p>
+                <p> Published at {{ news.publish }} by {{ news.author }}</p>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No news are available now.</p>
+    {% endif %}
+{% include "pagination.html" with page=all_news %}
+{% endblock %}

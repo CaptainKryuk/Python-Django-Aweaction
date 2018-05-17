@@ -1,0 +1,16 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+Dashboard
+{% endblock %}
+
+{% block content %}
+Hello, {{ user.username }}
+
+<p>
+    <a href="{% url 'downloading' %}"><input type="button" value="Загрузить проект"></a>
+    <a href="edit/"><input type="button" value="Изменить"></a>
+    <a href="/accounts/logout/"><input type="button" value="Выйти"></a>
+</p>
+<p>Мои проекты: </p>
+{% endblock %}

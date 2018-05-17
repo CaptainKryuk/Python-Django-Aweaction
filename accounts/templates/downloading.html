@@ -1,0 +1,15 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}
+Загрузка проекта
+{% endblock %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data">{% csrf_token %}
+        <p>Имя проекта: <input type="text" name="name"></p>
+        <p>Описание: <input type="text" name="description"></p>
+        <p>Документ: <input type="file" name="document"></p>
+    <button type="submit">Upload</button>
+    </form>
+<p><a href="{% url 'dashboard' %}">Вернуться на главную страницу</a> </p>
+{% endblock %}

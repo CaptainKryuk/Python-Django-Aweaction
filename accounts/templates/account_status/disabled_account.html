@@ -1,0 +1,10 @@
+{% extends "includes/wrapper.html %}
+
+{% block title %}
+Account
+{% endblock %}
+
+{% block content %}
+<h3>Ваш профиль отключен.</h3>
+<a href="{% url 'restore_account' %}">Восстановить профиль?</a>
+{% endblock %}

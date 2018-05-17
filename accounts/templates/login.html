@@ -1,0 +1,22 @@
+{% extends "includes/wrapper.html" %}
+
+{% block title %}Аутентификация{% endblock %}
+
+{% block content %}
+{% if form.errors %}
+    <p>
+        Что-то не сходится.. Попробуйте ввести еще раз.
+    </p>
+{% else %}
+<h3>Введите ваш логин и пароль:</h3>
+{% endif %}
+<div class="login-form">
+    <form action="" method="post">
+        {{ form.as_p }}
+        {% csrf_token %}
+        <a href='/accounts/registration/'>Зарегистрироваться?</a>
+        <p><a href="{% url 'password_reset' %}">Забыли пароль?</a></p>
+        <p><input type="submit" value="Войти" /></p>
+    </form>
+</div>
+{% endblock %}
