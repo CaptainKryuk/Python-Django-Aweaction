@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 from accounts import views
 from django.contrib.auth import views as auth_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -25,4 +27,5 @@ urlpatterns = [
     path('', include('main.urls'), name='main'),
     path('news/', include('news.urls'), name='news'),
     path('dashboard/', include('accounts.urls_dash'), name='dashboard'),
-]
+]+ static(settings.STATIC_URL, documents_root=settings.STATIC_ROOT) \
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

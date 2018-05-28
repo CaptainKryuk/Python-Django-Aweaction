@@ -17,11 +17,11 @@ class News(models.Model):
     author = models.ForeignKey(User, related_name='blog_posts', on_delete=models.CASCADE, null=True, blank=True)
 
     # Contest is short info about article, using as an introduction
-    contest = models.CharField(max_length=300)
+    contest = models.ImageField(upload_to='news/%Y/%m/%d')
     text = models.TextField()
 
     # Publish date
-    publish = models.DateTimeField(default=timezone.now)
+    publish = models.DateTimeField(auto_now_add=True)
 
     # Time after article creating
     created = models.DateTimeField(auto_now_add=True)

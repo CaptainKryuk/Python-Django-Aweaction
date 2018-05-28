@@ -8,8 +8,7 @@ News
     {% if all_news %}
         {% for news in all_news %}
             {% if news.status == 'published' %}
-                <p><a href="/news/article/{{ news.id }}/">{{ news.title }}</a></p>
-                <p>{{ news.contest }}</p>
+                <p><a href="/news/article/{{ news.id }}/"><img src="{{ news.contest.url }}" width="20%"></a></p>
                 <p> Published at {{ news.publish }} by {{ news.author }}</p>
             {% endif %}
         {% endfor %}

@@ -1,11 +1,11 @@
 from django.shortcuts import render
-from . import models
+from .models import *
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.shortcuts import get_object_or_404
 
 
 def all_news(request):
-    object_list = models.News.objects.all()
+    object_list = News.objects.all()
     paginator = Paginator(object_list, 2)
     page = request.GET.get('page')
     try:
@@ -18,11 +18,15 @@ def all_news(request):
     context = {'all_news': news,
                'page': page}
     return render(request, 'all_news.html', context)
-    # news = models.News.objects.all()
-    # context = {'all_news': news}
-    # return render(request, 'all_news.html', context)
 
 
 def article(request, news_id):
-    detail = get_object_or_404(models.News, pk=news_id)
+    detail = get_object_or_404(News, pk=news_id)
     return render(request, 'article.html', {'detail': detail})
+
+
+def test(request, post_id):
+    number = int(post_id)
+    if number >= 0:
+        contest = {'number': number}
+        return render(request, 'test.html', contest)
